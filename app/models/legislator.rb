@@ -52,8 +52,9 @@ class Legislator < ActiveRecord::Base
 		puts "Representatives: #{Legislator.where(title: "Rep", in_office: 1).count}" 
 	end
 
-	def delete
+	def self.delete
 		Legislator.destroy_all(in_office: 0)
 	end
+
 end
 

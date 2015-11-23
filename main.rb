@@ -17,4 +17,5 @@ Legislator.print_state
 
 Legislator.print_summary
 Legislator.office_summary
+Legislator.delete
 # Legislator.find_by(in_office: 1)
