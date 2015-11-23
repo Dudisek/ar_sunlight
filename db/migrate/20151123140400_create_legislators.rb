@@ -14,6 +14,7 @@ class CreateLegislators < ActiveRecord::Migration
 			t.string :fax
 			t.string :website
 			t.string :webform
+			t.string :congress_office
 			t.string :twitter_id
 			t.date :birthday
 			t.timestamps null: false

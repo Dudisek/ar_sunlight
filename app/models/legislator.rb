@@ -14,7 +14,12 @@ class Legislator < ActiveRecord::Base
 		rep.each do |a| puts "#{a.firstname} #{a.lastname} (#{a.party})" end
 	end
 	def self.print_gender_per
-		
+		p total = Legislator.count(title: "Sen")
+		p gender = Legislator.where(gender: "M").count(title: "Sen")	
+		p different = total - gender
+		per = different.to_f / total.to_f * 100
+		p per.round
+		puts "MALE"
 	end
 end
 
