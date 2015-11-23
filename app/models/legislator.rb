@@ -36,7 +36,7 @@ class Legislator < ActiveRecord::Base
 			array << [x,Legislator.where(title: "Sen").where("state = ?",x.to_s).where(in_office: 1).count, Legislator.where(title: "Rep").where("state = ?",x.to_s).where(in_office: 1).count]
 		end
 		array.sort_by!{|k|-(k[1]+k[2])}
-		
+
 		array.each do |x|
 		puts "#{x[0]}: #{x[1]} Senators, #{x[2]} Representatives"
 		end
@@ -52,5 +52,8 @@ class Legislator < ActiveRecord::Base
 		puts "Representatives: #{Legislator.where(title: "Rep", in_office: 1).count}" 
 	end
 
+	def delete
+		Legislator.destroy_all(in_office: 0)
+	end
 end
 
