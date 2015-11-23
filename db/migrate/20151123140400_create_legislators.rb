@@ -9,12 +9,12 @@ class CreateLegislators < ActiveRecord::Migration
 			t.string :party
 			t.string :state
 			t.string :distric
+			t.string :in_office
 			t.string :gender
 			t.string :phone
 			t.string :fax
 			t.string :website
 			t.string :webform
-			t.string :congress_office
 			t.string :twitter_id
 			t.date :birthday
 			t.timestamps null: false
